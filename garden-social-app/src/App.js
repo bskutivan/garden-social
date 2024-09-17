@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import UserProfile from './pages/UserProfile'
 
 function App() {
   return (
@@ -18,6 +21,12 @@ function App() {
           Learn React
         </a>
       </header>
+      <Router>
+        <Switch>
+          <Route exact path="/" Component={HomePage} />
+          <Route path="/profile/:username" Component={UserProfile} />
+        </Switch>
+      </Router>
     </div>
   );
 }
